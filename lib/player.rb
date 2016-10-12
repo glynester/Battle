@@ -8,6 +8,15 @@ class Player
     @name = name
     @hit_points = DEFAULT_HP
   end
+  
+  def attack(player)
+    player.take_damage
+    
+  end
+  
+  def take_damage
+    @hit_points -= 10
+  end
 
 
 end
