@@ -1,13 +1,9 @@
 require 'sinatra/base'
-#require 'sinatra'
 require 'shotgun'
-
-# get '/' do
-#   "Hello World"
-# end
+require './lib/player'
 
 class Battle < Sinatra::Base
-  
+
   set :session_secret, "My session secret"
   enable :sessions
 
@@ -26,7 +22,7 @@ class Battle < Sinatra::Base
     @player_2_name = session[:player_2_name]
     erb :play
   end
-  
+
   get '/attack' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
