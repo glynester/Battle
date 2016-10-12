@@ -7,5 +7,6 @@ gem 'rspec-sinatra'
 gem 'rspec'
 gem 'capybara'
 gem 'shotgun'
-gem 'poltergeist'   #for Cloud9 
+gem 'poltergeist'   #for Cloud9
 gem 'phantomjs'     #for Cloud9
+gem 'rerun'
