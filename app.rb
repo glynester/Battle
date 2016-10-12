@@ -7,6 +7,8 @@ require 'shotgun'
 # end
 
 class Battle < Sinatra::Base
+  
+  set :session_secret, "My session secret"
   enable :sessions
 
   get '/' do
