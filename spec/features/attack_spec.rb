@@ -1,5 +1,3 @@
-#require 'spec_helper'
-
 feature 'attacking' do
 
   scenario "attack player 2 reduces player HP by 10" do
