@@ -1,7 +1,10 @@
 <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 
 <div>
-<%= @game.current_turn.name%> HP: <%=@game.current_turn.hit_points %>
+<%= @game.current_turn.name%>'s HP: <%=@game.current_turn.hit_points %>
+</div>
+<div>
+<%= @game.opponent.name%>'s HP: <%=@game.opponent.hit_points %>
 </div>
 
 <div>

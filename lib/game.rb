@@ -24,6 +24,10 @@ class Game
   def switch_turns
     @current_turn = opponent_of(current_turn)
   end
+  
+  def opponent
+    opponent_of(@current_turn)
+  end
 
   private
 
