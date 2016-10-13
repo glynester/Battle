@@ -9,8 +9,8 @@ class Player
     @hit_points = MAX_HP
   end
 
-  def is_attacked
-    @hit_points = @hit_points - AP
+  def recieve_damage
+    @hit_points -= AP
   end
 
 end
