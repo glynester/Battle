@@ -1,10 +1,7 @@
 require 'sinatra/base'
-require 'spec_helper'
+require './lib/player'
 
 class Battle < Sinatra::Base
-  use Rack::Session::Cookie,  :key => 'rack.session',
-                              :path => '/',
-                              :secret => 'your_secret'
 
   get '/' do
     erb(:index)
@@ -13,8 +10,6 @@ class Battle < Sinatra::Base
   post '/names' do
     $player_1 = Player.new(params[:Player1])
     $player_2 = Player.new(params[:Player2])
-    # session[:player_1_name] = params[:Player1]
-    # session[:player_2_name] = params[:Player2]
     redirect '/play'
   end
 
