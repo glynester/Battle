@@ -10,11 +10,11 @@ class Game
   end
 
   def player_1
-    @players.first
+    players.first
   end
 
   def player_2
-    @players.last
+    players.last
   end
 
   def attack(player)
@@ -43,11 +43,12 @@ class Game
   end
 
   private
+  attr_reader :players
   
   def losing_player
     players.select { |player| player.hit_points <= 0 }
   end
 
-  attr_reader :players
+  
 
 end
