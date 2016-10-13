@@ -3,8 +3,10 @@
 describe Game do
 
   subject(:game) { described_class.new(player1, player2) }
-  let(:player1) { double :player_1 }
-  let(:player2) { double :player_2 }
+  let(:player1) { double :player_1, hit_points: 50 }
+  let(:player2) { double :player_2, hit_points: 50 }
+  subject(:gameover) { described_class.new(player1, deadplayer) }
+  let(:deadplayer) { double :player_2, hit_points: 0 }
 
   describe "initialize" do
     it "accepts 2 player instances" do
@@ -31,4 +33,20 @@ describe Game do
       expect(game.current_turn).to eq player2
     end
   end
+  
+  context "End of the gane scenarios" do
+    describe "returns true if player 2 has lost" do
+      it "Ends game if someone's hit_points reaches 0" do
+       expect(gameover.game_over?).to eq true
+     end
+    end
+    
+    describe "#game_over?" do
+      it "does not show game_over if there are no scores at zero" do
+        expect(game.game_over?).to eq false
+      end
+    end
+  end
 end
+
+

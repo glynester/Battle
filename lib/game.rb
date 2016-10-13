@@ -33,8 +33,20 @@ class Game
   def opponent_of(the_player)
     players.select {|player| player != the_player }.first
   end
+  
+  def game_over?
+    losing_player.count > 0
+  end
+  
+  def loser
+    losing_player.first     #Should only be one if this is called correctly!
+  end
 
   private
+  
+  def losing_player
+    players.select { |player| player.hit_points <= 0 }
+  end
 
   attr_reader :players
 

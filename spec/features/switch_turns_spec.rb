@@ -6,18 +6,14 @@ feature 'Switch turns' do
 
   scenario "After player 1 has had their turn , it should be the turn of player 2" do
     sign_in_and_play
-    click_button "Attack"
-    click_button "OK"
+    attack_and_confirm
     expect(page).not_to have_content "Dave's turn"
     expect(page).to have_content "Mittens's turn"
   end
 
     scenario "After player 2 has had their turn , it should be the turn of player 1" do
     sign_in_and_play
-    click_button "Attack"
-    click_button "OK"
-    click_button "Attack"
-    click_button "OK"
+    2.times { attack_and_confirm }
     expect(page).not_to have_content "Mitten's turn"
     expect(page).to have_content "Dave's turn"
   end
