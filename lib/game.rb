@@ -2,8 +2,8 @@
 
 class Game
 
-  def initialize(player_1, player_2)
-    @players = [player_1, player_2]
+  def initialize(player_one, player_two)
+    @players = [player_one, player_two]
   end
 
   def player_1

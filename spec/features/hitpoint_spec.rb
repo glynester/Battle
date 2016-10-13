@@ -1,4 +1,4 @@
-require 'spec_helper'
+#require 'spec_helper'
 
 feature 'hit points' do
   scenario 'show players hit points' do
