@@ -15,17 +15,17 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @attack = $attack
-    @player_1 = $player_1.name
-    @player_2 = $player_2.name
+    @player_1 = $player_1
+    @player_2 = $player_2
     erb(:play)
   end
 
   post '/attack' do
     $attack = !!params[:attack]
-    $player_2.recieve_damage  
+    Game.new.attack(@player_2)
     redirect '/play'
   end
 
-  
+
   run! if app_file == $0
 end

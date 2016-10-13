@@ -9,8 +9,6 @@ class Player
     @hit_points = MAX_HP
   end
 
-  def recieve_damage
-    @hit_points -= AP
-  end
+  
 
 end
