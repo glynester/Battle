@@ -1,5 +1,7 @@
 <p><%= @game.player_1.name %> versus <%= @game.player_2.name %></p>
 
+<p><%= @game.player_2.name %> has <%= @game.player_2.hit_points %> hit points</p>
+
 <form action="/attack" method="get">
   <button type="submit" name="attack">Attack!</button>
 </form>
@@ -7,5 +9,3 @@
 <% if @attack %>
   <p><%= @game.player_1.name %> attacked <%= @game.player_2.name %>!</p>
 <% end %>
-
-<p><%= @game.player_2.name %> has <%= @game.player_2.hit_points %> hit points</p>

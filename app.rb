@@ -23,7 +23,6 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    $attack = !!params[:attack]
     @game.attack(@game.player_2)
     erb(:attack)
   end
